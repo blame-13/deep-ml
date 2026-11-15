@@ -2,7 +2,7 @@
 
 My machine learning practice from [Deep-ML](https://www.deep-ml.com). Every solution here was written by hand.
 
-**4** solved · 3 problems · 1 labs · 0 math
+**5** solved · 4 problems · 1 labs · 0 math
 
 ![Coverage](./coverage.svg)
 
@@ -14,6 +14,7 @@ My machine learning practice from [Deep-ML](https://www.deep-ml.com). Every solu
 | --- | --- | --- | --- |
 | [Binary Classification with Logistic Regression](https://www.deep-ml.com/problems/104) | easy | 2026-11-15 | [solution](problems/0104-binary-classification-with-logistic-regression) |
 | [Generate a Confusion Matrix for Binary Classification](https://www.deep-ml.com/problems/75) | easy | 2026-11-15 | [solution](problems/0075-generate-a-confusion-matrix-for-binary-classification) |
+| [Implement F-Score Calculation for Binary Classification](https://www.deep-ml.com/problems/61) | easy | 2026-11-15 | [solution](problems/0061-implement-f-score-calculation-for-binary-classification) |
 | [One Training Step](https://www.deep-ml.com/problems/1219) | medium | 2026-11-15 | [solution](problems/1219-one-training-step) |
 
 ## Labs
