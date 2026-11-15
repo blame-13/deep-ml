@@ -2,7 +2,6 @@
 import torch
 import torch.nn as nn
 
-
 class RegularizedMLP(nn.Module):
     """MLP with BatchNorm1d and Dropout for binary classification."""
 
@@ -12,10 +11,11 @@ class RegularizedMLP(nn.Module):
         #   Linear -> BatchNorm1d -> ReLU (or similar) -> Dropout
         # Final layer: Linear to 1 logit.
         # Store layers on self (Sequential is fine).
-        layers, prev = [], input_dim
-        for _ in range (2):
-            layers+=[nn.Linear(prev, hidden_dim), nn.BatchNorm1d(hidden_dim), nn.ReLU(), nn.Dropout(dropout_p)]
-            prev = hidden_dim
+        layers, prev = [nn.BatchNorm1d(input_dim)], input_dim
+        layers+=[nn.Linear(prev, hidden_dim), nn.BatchNorm1d(hidden_dim), nn.ReLU()]
+        prev = hidden_dim
+        layers+=[nn.Linear(prev, hidden_dim), nn.BatchNorm1d(hidden_dim), nn.ReLU(), nn.Dropout(dropout_p)]
+        prev = hidden_dim
         layers += [nn.Linear(prev, 1)]
         self.net = nn.Sequential(*layers)
     def forward(self, x: torch.Tensor) -> torch.Tensor:
